@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Create Real Time App</title>
 
     <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
     <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
@@ -16,16 +16,21 @@
 <body>
     <div id="container"></div>
 
-
     <script>
-        ReactDOM.render(
-            React.createElement(
-                'h1',
+        function time() {
+            var element = React.createElement(
+                'div',
                 null,
-                'Hello World',
-            ),
-            document.getElementById('container')
-        );
+                'The time now is ',
+                new Date().toLocaleTimeString(),
+                '.'
+            );
+
+            ReactDOM.render(element, document.getElementById('container'));
+        }
+
+        setInterval(time, 1000);
+
     </script>
 </body>
 
