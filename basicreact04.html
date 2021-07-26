@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Basic Component</title>
+
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+    <!-- <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script> -->
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        function cars(list) {
+            return React.createElement(
+                'h2',
+                null,
+                'Car Brands :',
+                list.brand
+            );
+        }
+
+        function output() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(cars, { brand: "Toyota" }),
+                React.createElement(cars, { brand: "Mazda" }),
+                React.createElement(cars, { brand: "Hyundai" })
+            );
+        }
+
+        ReactDOM.render(React.createElement(output, null), document.getElementById('container'));
+    </script>
+</body>
+
+</html>
