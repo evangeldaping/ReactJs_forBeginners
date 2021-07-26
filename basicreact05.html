@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Conditional</title>
+
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+    <!-- <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script> -->
+
+</head>
+
+<body>
+    <p>10 + 5 = 15</p>
+    <div id="container"></div>
+    <script>
+        function correct(sum) {
+            return React.createElement(
+                'h1',
+                null,
+                'It is correct'
+            );
+        }
+
+        function wrong(sum) {
+            return React.createElement(
+                'h1',
+                null,
+                'It is wrong'
+            );
+        }
+
+        function result(sum) {
+            var addition = sum.addition;
+            if (addition) {
+                return React.createElement(correct, null);
+            }
+            return React.createElement(wrong, null);
+        }
+
+        ReactDOM.render(React.createElement(result, { addition: true }), document.getElementById('container'));
+
+    </script>
+</body>
+
+</html>
