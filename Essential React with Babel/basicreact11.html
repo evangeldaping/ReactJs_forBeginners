@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initial State Object</title>
+
+    <script src="../js/babel.min.js"></script>
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Hello = React.createClass({
+            getInitialState: function () {
+                return {
+                    greetings: 'Hello World'
+                }
+            },
+
+            render: function () {
+                return (<h1>{this.state.greetings}</h1>);
+            }
+        });
+
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById('container')
+        )
+    </script>
+</body>
+
+</html>
