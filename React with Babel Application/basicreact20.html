@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disable button when empty</title>
+
+    <script src="../js/babel.min.js"></script>
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Hello = React.createClass({
+            getInitialState() {
+                return { fullname: '' }
+            },
+            changes(e) {
+                this.setState({ fullname: e.target.value });
+            },
+            render() {
+                return <div>
+                    <h2>What is your name?</h2>
+                    <input name="fullname" value={this.state.fullname} onChange={this.changes} />
+                    <input type="button" disabled={this.state.fullname} value="submit" />
+                </div>
+            }
+        });
+
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById('container')
+        )
+    </script>
+</body>
+
+</html>
