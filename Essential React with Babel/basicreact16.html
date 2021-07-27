@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Components</title>
+
+    <script src="../js/babel.min.js"></script>
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Name = React.createClass({
+            render: function () {
+                return <div>{this.props.Fullname}</div>
+            }
+        });
+
+        var Hello = React.createClass({
+            getInitialState: function () {
+                return {
+                    yourname: 'Evangel Daping'
+                };
+            },
+
+            render: function () {
+                return <div>
+                    <h1>{this.props.output}</h1>
+                    <Name Fullname={this.state.yourname}></Name>
+                </div>;
+            }
+        });
+
+        ReactDOM.render(
+            <Hello output={'Hello World'} />,
+            document.getElementById('container')
+        )
+    </script>
+</body>
+
+</html>
