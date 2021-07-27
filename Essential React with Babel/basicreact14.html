@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statement</title>
+
+    <script src="../js/babel.min.js"></script>
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        function System(os) {
+            const operating_system = os.operating_system;
+            if (operating_system) {
+                return (
+                    <h1>You choose Windows</h1>
+                )
+            } else {
+                return (
+                    <h1>You choose Linux</h1>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <System operating_system={true} />,
+            document.getElementById('container')
+        )
+    </script>
+</body>
+
+</html>
