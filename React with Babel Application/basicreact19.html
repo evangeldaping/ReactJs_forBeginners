@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onchange text Form Application</title>
+
+    <script src="../js/babel.min.js"></script>
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Hello = React.createClass({
+            getInitialState: function () {
+                return { want: '' }
+            },
+            textChange: function (result) {
+                this.setState({ want: result.target.value });
+            },
+            render: function () {
+                return <div>
+                    <p>What do you want?</p>
+                    <input type="text" onChange={this.textChange.bind(this)} />
+                    <h3><result>{this.state.want}</result></h3>
+                </div>
+            }
+        });
+
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById('container')
+        )
+    </script>
+</body>
+
+</html>
